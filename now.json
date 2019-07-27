@@ -1,6 +1,7 @@
 {
     "name": "static-site",
     "version": 2,
+    "scope": "independant-developers",
     "alias": "landing-goals",
     "builds": [
         { "src": "www/package.json", "use": "@now/next" },
