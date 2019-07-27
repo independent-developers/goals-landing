@@ -19,10 +19,10 @@ const Page = (props) => <div className="container">
       <p>Meet Goals.</p>
     </div>
     
-    <div className="goals">
+    {/* <div className="goals">
       <h2>Welcome {props.streamerName} !</h2>
       <Streamers streamerName={props.streamerName} />
-    </div>
+    </div> */}
     <style jsx global>{`
       * {
         box-sizing: border-box;
