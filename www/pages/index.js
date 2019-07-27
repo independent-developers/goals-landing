@@ -1,31 +1,27 @@
 import Time from '../components/time'
+import Streamers from '../components/streamers'
 import { sharedText } from '../../shared/text'
 import 'isomorphic-unfetch'
+import Logo from '../assets/img/logo.min.svg'
 
 const langs = [
   { name: 'Node.js', path: 'node', ext: '.js' }
 ]
 
-const Page = ({nows}) => <div className="container">
-    <div className="logo">
-      yay
-    </div>
-    <div className="clocks">
-      {nows.map(({name, path, ext, now}) => 
-        <a href={`https://zeit.co/now-examples/monorepo/4csp3st7w/source?f=src/${path}/index${ext}`} target="_blank" title={name} key={path}>
-          <Time 
-            name={name}
-            path={path}
-            now={now}
-          />
-        </a>
-      )}
-    </div>
+const Page = (props) => <div className="container">
+    <Logo width="120"/>
+
     <div className="intro">
       <h2>What is this?</h2>
-      <p>We built this deployment to showcase the power and flexibility of <a href="https://zeit.co/blog/now-2" target="_blank">Now 2.0</a>. It's organized as a monorepo that combines multiple technologies. {sharedText()}</p>
-      <p>The entrypoint to this deployment is a Next.js application, compiled to serverless functions that server-render on-demand.</p>
-      <p>Thanks to our <a href="https://zeit.co/docs/v2/deployments/builders/overview" title="builders" target="_blank">builders</a>, you are not limited to just static or dynamic, Go or Node.js. The possibilities are endless.</p>
+      <p>If you are a streamer coming from <a href="https://twitch.tv">Twitch.tv</a>, you may have a community and you love to interact with them.</p>
+      <p>What if I tell you that now you can engage more of them, everyday to bring a new way to progress on Twitch ?</p>
+      <p>Thanks to our <a href="https://www.twitch.tv/p/extensions/" title="twitch-extension" target="_blank">extension</a>, you can now ask what your community wants to accomplish with you.</p>
+      <p>Meet Goals.</p>
+    </div>
+    
+    <div className="goals">
+      <h2>Welcome {props.streamerName} !</h2>
+      <Streamers streamerName={props.streamerName} />
     </div>
     <style jsx global>{`
       * {
@@ -160,15 +156,9 @@ const Page = ({nows}) => <div className="container">
   </div>
 
 Page.getInitialProps = async ({req}) => {
-  const protocol = req.headers['x-forwarded-proto']
-  const host = req.headers['x-forwarded-host'] || req.headers.host
-  const baseUrl = `${protocol}://${host}/api`
-  const nows = await Promise.all(langs.map(async ({name, path, ext}) => {
-    const now = await (await fetch(`${baseUrl}/${path}`)).text()
-    return {name, path, now, ext}
-  }))
+  const streamerName = 'Carbow';
 
-  return { nows }
+  return {streamerName}
 }
 
 export default Page

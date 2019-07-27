@@ -10,7 +10,6 @@ export default class extends React.Component {
   }
 
   componentDidMount() {
-    console.log('hey')
     const { path } = this.props
     const url = `${location.href}api/${path}`
     const update = async () => {
@@ -22,7 +21,7 @@ export default class extends React.Component {
             this.setState({now})
           }
         } else {
-          console.log(`res not ok from ${url}`)
+          console.error(`res not ok from ${url}`)
         }
       } catch (err) {
         console.error(`Could not fetch time from ${url}`)
