@@ -1,8 +1,8 @@
 {
-    "name": "static-site",
+    "name": "goals-landing",
     "version": 2,
     "scope": "independant-developers",
-    "alias": "landing-goals",
+    "alias": "goals-landing",
     "builds": [
         { "src": "www/package.json", "use": "@now/next" },
         { "src": "api/*/*.js", "use": "@now/node" }
