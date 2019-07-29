@@ -4,9 +4,6 @@ import { sharedText } from '../../shared/text'
 import 'isomorphic-unfetch'
 import Logo from '../assets/img/logo.min.svg'
 
-const langs = [
-  { name: 'Node.js', path: 'node', ext: '.js' }
-]
 
 const Page = (props) => <div className="container">
     <Logo width="120"/>
@@ -15,7 +12,7 @@ const Page = (props) => <div className="container">
       <h2>What is this?</h2>
       <p>If you are a <strong>streamer</strong> coming from <a href="https://twitch.tv">Twitch.tv</a>, you may have a community and <i>you love to interact with them</i>.</p>
       <p>What if I tell you that <i>now you can engage <strong>more</strong> of them</i>, everyday to bring a new way to progress on Twitch ?</p>
-      <p>Thanks to our <a href="https://www.twitch.tv/p/extensions/" title="twitch-extension" target="_blank">extension</a>, you can now ask what your community wants to accomplish with you.</p>
+      <p>Thanks to our <a href="https://www.twitch.tv/p/extensions/" title="twitch-extension" target="_blank">extension</a>, you can now ask what your community wants to accomplish with you. You set some goals to reach with them, when it's done, just check id ! Once you finalized your list, celebrate with them !</p>
       <p>Meet <strong>Goals</strong>.</p>
 
     </div>

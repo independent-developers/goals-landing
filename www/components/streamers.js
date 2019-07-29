@@ -11,7 +11,7 @@ export default class extends React.Component {
 
   componentDidMount() {
     const userId = '1234'
-    const url = `https://goals-its091yko.now.sh/api/users/${userId}/goals`
+    const url = `https://goals-oer9i7o29.now.sh/api/users/${userId}/goals`
     const fetchStreamersList = async () => {
       try {
         const response = await fetch(url).then(r => r.json())
@@ -33,6 +33,7 @@ export default class extends React.Component {
     const { streamerName } = this.props
     const { streamersList } = this.state
     const StreamersList = ({ streamers }) => {
+      if(streamers.length > 0){
         const listItems = streamers.map((number) =>
           <li key={number.key}>
               <p>{number.key}</p>
@@ -42,6 +43,8 @@ export default class extends React.Component {
         return (
           <ul>{listItems}</ul>
         );
+      }
+      return (<p>Don't you have goals to reach with your community ?</p>)
       }
 
     return (
