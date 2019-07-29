@@ -13,10 +13,11 @@ const Page = (props) => <div className="container">
 
     <div className="intro">
       <h2>What is this?</h2>
-      <p>If you are a streamer coming from <a href="https://twitch.tv">Twitch.tv</a>, you may have a community and you love to interact with them.</p>
-      <p>What if I tell you that now you can engage more of them, everyday to bring a new way to progress on Twitch ?</p>
+      <p>If you are a <strong>streamer</strong> coming from <a href="https://twitch.tv">Twitch.tv</a>, you may have a community and <i>you love to interact with them</i>.</p>
+      <p>What if I tell you that <i>now you can engage <strong>more</strong> of them</i>, everyday to bring a new way to progress on Twitch ?</p>
       <p>Thanks to our <a href="https://www.twitch.tv/p/extensions/" title="twitch-extension" target="_blank">extension</a>, you can now ask what your community wants to accomplish with you.</p>
-      <p>Meet Goals.</p>
+      <p>Meet <strong>Goals</strong>.</p>
+
     </div>
     
     {/* <div className="goals">
