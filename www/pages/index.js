@@ -4,6 +4,9 @@ import { sharedText } from '../../shared/text'
 import 'isomorphic-unfetch'
 import Logo from '../assets/img/logo.min.svg'
 
+const Section = (props) => <div className="Container">
+  {props.children}
+</div>
 
 const Page = (props) => <div className="container">
     <Logo width="120"/>
@@ -14,8 +17,8 @@ const Page = (props) => <div className="container">
       <p>What if I tell you that <i>now you can engage <strong>more</strong> of them</i>, everyday to bring a new way to progress on Twitch ?</p>
       <p>Thanks to our <a href="https://www.twitch.tv/p/extensions/" title="twitch-extension" target="_blank">extension</a>, you can now ask what your community wants to accomplish with you. You set some goals to reach with them, when it's done, just check id ! Once you finalized your list, celebrate with them !</p>
       <p>Meet <strong>Goals</strong>.</p>
-
     </div>
+    <a type="button" href="https://discord.gg/Yed6x2n" className="discord-btn">Reach us on Discord</a>
     
     {/* <div className="goals">
       <h2>Welcome {props.streamerName} !</h2>
@@ -30,24 +33,37 @@ const Page = (props) => <div className="container">
       }
       body {
         margin: 0;
-        color: white;
+        color: black;
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
         text-rendering: optimizeLegibility;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing:grayscale;
-        background: radial-gradient(circle, #333, #333 1px, #000 1px, #000);
+        background: radial-gradient(circle, #5f5f5f, white 1px, white 1px, white);
         background-size: 28px 28px;
         background-position: center;
         font-size: 18px;
         line-height: 1.6;
         font-weight: 400;
       }
+      .discord-btn {
+        display: flex;
+        align-items: center;
+        height: 55px;
+        width: 220px;
+        justify-content: center;
+        border-radius: 10px;
+        color: #fff;
+        background-color: #7289da;
+      }
+      .discord-btn:hover {
+        background-color: #a0aee0;
+      }
       a {
         text-decoration: none;
-        color: white;
+        color: black;
       }
       strong {
-        color: white;
+        color: black;
         font-weight: 600;
       }
       code {
@@ -58,8 +74,8 @@ const Page = (props) => <div className="container">
       code::after {
         content: '\`';
       }
-      ::selection{ background: #f81ce5; color: white; }
-      ::-moz-selection{ background: #f81ce5; color: white; }
+      ::selection{ background: #f81ce5; color: black; }
+      ::-moz-selection{ background: #f81ce5; color: black; }
       .container {
         display: flex;
         flex-direction: column;
@@ -75,6 +91,8 @@ const Page = (props) => <div className="container">
         margin: 30px 0 20px;
       }
       .intro {
+        background-color: rgba(255,255,255, 0.8);
+        border-radius: 1em;
         text-align: left;
         max-width: 640px;
       }
